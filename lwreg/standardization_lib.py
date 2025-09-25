@@ -147,7 +147,7 @@ class SuperParent(Standardization):
             return None
         return res
 
-class chembl_standardize(Standardization):
+class ChemblStandardize(Standardization):
     name = "chembl_standardizer"
     explanation = "uses the chembl_structure_pipline to standardize the molecule"
 
@@ -158,7 +158,7 @@ class chembl_standardize(Standardization):
             return None
         return res
 
-class chembl_parent(Standardization):
+class ChemblParent(Standardization):
     name = "chembl_parent"
     explanation = "uses the chembl_structure_pipline to generate the parent of the molecule"
 

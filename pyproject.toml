@@ -12,7 +12,8 @@ authors = [
 description = "lightweight compound registration system"
 readme = "README.md"
 dependencies = [
-    "Click"
+    "Click",
+    "chembl_structure_pipeline"
 ]
 license = "MIT"
 license-files = ["LICENSE"]

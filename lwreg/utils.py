@@ -37,7 +37,7 @@ standardizationOptions = {
     'tautomer': standardization_lib.TautomerParent(),
     'super': standardization_lib.SuperParent(),
     'canonicalize': standardization_lib.CanonicalizeOrientation(),
-    'chembl_standardize': standardization_lib.ChemblStandardize(),
+    'chembl_standardizer': standardization_lib.ChemblStandardize(),
     'chembl_parent': standardization_lib.ChemblParent(),
 }
 

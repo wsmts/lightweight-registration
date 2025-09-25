@@ -5,6 +5,7 @@
 # which is included in the file LICENSE,
 
 from rdkit import Chem
+from chembl_structure_pipeline import standardizer
 
 import warnings
 
@@ -143,5 +144,30 @@ class SuperParent(Standardization):
         try:
             res = rdMolStandardize.SuperParent(mol)
         except:
+            return None
+        return res
+
+class chembl_standardize(Standardization):
+    name = "chembl_standardizer"
+    explanation = "uses the chembl_structure_pipline to standardize the molecule"
+
+    def __call__(self, mol):
+        try:
+            res = standardizer.standardize_mol(mol)
+        except:
+            return None
+        return res
+
+class chembl_parent(Standardization):
+    name = "chembl_parent"
+    explanation = "uses the chembl_structure_pipline to generate the parent of the molecule"
+
+    def __call__(self, mol):
+        try:
+            res, exclude = standardizer.get_parent_mol(mol)
+        except:
+            return None
+        # https://github.com/chembl/ChEMBL_Structure_Pipeline/wiki/Exclusion-Flag
+        if exclude:
             return None
         return res
